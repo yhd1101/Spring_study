@@ -26,7 +26,7 @@ public class BoardServiceImpl implements BoardService {
 
         return resultBoard;
     }
-
+//안녕
     @Override
     public Board createBoard(Board board) {
         Board newBoard = Board.builder().title(board.getTitle()).content(board.getContent()).build();
