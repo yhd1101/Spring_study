@@ -36,13 +36,22 @@ public class BoardServiceImpl implements BoardService {
         return newBoard;
     }
 
+
+
     @Override
-    public String updateBoard() {
-        return null;
+    public Board updateBoard(Long id, Board board) {
+
+        Board target = boardRepository.findById(id).orElseThrow();
+        target.setTitle(board.getTitle());
+        target.setContent(board.getContent());
+        return  target;
+
+
     }
 
     @Override
-    public String deleteBoard() {
-        return null;
+    public void deleteBoard(Long id) {
+        boardRepository.deleteById(id);
+
     }
 }

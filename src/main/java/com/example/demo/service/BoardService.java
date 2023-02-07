@@ -10,7 +10,8 @@ public interface BoardService {
 
     Board createBoard(Board board);
 
-    String updateBoard();
 
-    String deleteBoard();
+    Board updateBoard(Long id, Board board);
+
+    void deleteBoard(Long id);
 }

@@ -34,13 +34,14 @@ public class BoardController {
         return resultBoard;
     }
 
-    @PutMapping
-    public String updateBoard(){
-        return boardService.updateBoard();
+    @PutMapping("/{id}")
+
+    public Board updateBoard(@PathVariable("id") Long id,@RequestBody Board board ){
+        return updateBoard(id,board);
     }
 
     @DeleteMapping
-    public String deleteBoard(){
-        return boardService.deleteBoard();
+    public Board deleteBoard(@PathVariable("id") Long id){
+        return deleteBoard(id);
     }
 }
